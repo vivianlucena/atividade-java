@@ -24,7 +24,7 @@ class Funcionario implements Comparable<Funcionario> {
         return setor;
     }
 
-    // Ordenação natural por nome
+    
     @Override
     public int compareTo(Funcionario outro) {
         return this.nome.compareToIgnoreCase(outro.nome);
@@ -49,13 +49,13 @@ public class SistemaComparacao {
         funcionarios.add(new Funcionario("Pedro", 2800, "Financeiro"));
         funcionarios.add(new Funcionario("Mariana", 4500, "TI"));
 
-        // Ordenação natural: nome
+        
         Collections.sort(funcionarios);
 
         System.out.println("=== ORDEM POR NOME ===");
         funcionarios.forEach(System.out::println);
 
-        // Salário crescente
+        
         Comparator<Funcionario> salarioCrescente =
                 Comparator.comparingDouble(Funcionario::getSalario);
 
@@ -64,7 +64,7 @@ public class SistemaComparacao {
         System.out.println("\n=== SALÁRIO CRESCENTE ===");
         funcionarios.forEach(System.out::println);
 
-        // Salário decrescente
+        
         Comparator<Funcionario> salarioDecrescente =
                 Comparator.comparingDouble(Funcionario::getSalario)
                         .reversed();
@@ -74,7 +74,7 @@ public class SistemaComparacao {
         System.out.println("\n=== SALÁRIO DECRESCENTE ===");
         funcionarios.forEach(System.out::println);
 
-        // Ordenação por setor
+        
         Comparator<Funcionario> setor =
                 Comparator.comparing(Funcionario::getSetor)
                         .thenComparing(Funcionario::getNome);
