@@ -1,14 +1,14 @@
 import java.util.*;
 import java.util.function.Predicate;
 
-// Interface funcional para regras de validação
+
 @FunctionalInterface
 interface Regra<T> {
 
     String validar(T objeto);
 }
 
-// Classe genérica de validação
+
 class Validador<T> {
 
     private final List<Regra<T>> regras = new ArrayList<>();
@@ -35,7 +35,7 @@ class Validador<T> {
     }
 }
 
-// Classe Cliente
+
 class Cliente {
 
     private String nome;
@@ -55,7 +55,7 @@ class Cliente {
     }
 }
 
-// Classe Produto
+
 class Produto {
 
     private String nome;
@@ -79,7 +79,7 @@ public class FrameworkValidacao {
 
     public static void main(String[] args) {
 
-        // Validador de Cliente
+        
         Validador<Cliente> validadorCliente = new Validador<>();
 
         validadorCliente
@@ -108,7 +108,7 @@ public class FrameworkValidacao {
             errosCliente.forEach(System.out::println);
         }
 
-        // Validador de Produto
+        
         Validador<Produto> validadorProduto = new Validador<>();
 
         validadorProduto
